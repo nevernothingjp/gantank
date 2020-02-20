@@ -11,9 +11,57 @@
         function(){webiopi().callMacro("leftForwad");},
         function(){webiopi().callMacro("leftForwadEnd");}
       );
-
+      var FORWARD_BTN = webiopi().createButton("Forward", "Forward",
+        function(){webiopi().callMacro("forwad");},
+        function(){webiopi().callMacro("forwadEnd");}
+      );
+      var RIGHT_FORWARD_BTN = webiopi().createButton("Right Forward", "Right Forward",
+        function(){webiopi().callMacro("rightForwad");},
+        function(){webiopi().callMacro("rightForwadEnd");}
+      );
+      var LEFT_TURN_BTN = webiopi().createButton("Left Turn", "Left Turn",
+        function(){webiopi().callMacro("leftTurn");},
+        function(){webiopi().callMacro("leftTurnEnd");}
+      );
+      var STOP_BTN = webiopi().createButton("Stop", "Stop",
+        function(){webiopi().callMacro("stop");},
+        function(){webiopi().callMacro("stopEnd");}
+      );
+      var RIGHT_TURN_BTN = webiopi().createButton("Right Turn", "Right Turn",
+        function(){webiopi().callMacro("rightTurn");},
+        function(){webiopi().callMacro("rightTurnEnd");}
+      );
+      var LEFT_BACK_BTN = webiopi().createButton("Left Back", "Left Back",
+        function(){webiopi().callMacro("leftBack");},
+        function(){webiopi().callMacro("leftBackEnd");}
+      );
+      var BACK_BTN = webiopi().createButton("Back", "Back",
+        function(){webiopi().callMacro("back");},
+        function(){webiopi().callMacro("backEnd");}
+      );
+      var RIGHT_BACK_BTN = webiopi().createButton("Right Back", "Right Back",
+        function(){webiopi().callMacro("rightBack");},
+        function(){webiopi().callMacro("rightBackEnd");}
+      );
+      $("#LeftForwardBtn").append(LEFT_FORWARD_BTN);
+      $("#ForwardBtn").append(FORWARD_BTN);
+      $("#RightForwardBtn").append(RIGHT_FORWARD_BTN);
+      $("#LeftTurnBtn").append(LEFT_TURN_BTN);
+      $("#StopBtn").append(STOP_BTN);
+      $("#RightTurnBtn").append(RIGHT_TURN_BTN);
+      $("#LeftBackBtn").append(LEFT_BACK_BTN);
+      $("#BackBtn").append(BACK_BTN);
+      $("#RightBackBtn").append(RIGHT_BACK_BTN);
     });
   </script>
+  <style type="text/css">
+    font-size:3em;
+    width:240px;
+    height:100px;
+    margin-left:10px;
+    color:#0000FF;
+    border:none;
+  </style>
 </head>
 <body>
   <table border="0" cellspacing="0" align="center">
