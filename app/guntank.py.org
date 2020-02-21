@@ -8,20 +8,19 @@ MORTOR_LEFT_FORWARD = 4
 MORTOR_LEFT_BACK = 14
 MORTOR_STOP = 15
 SHUTDOWN = 18
-
 def setup():
-  GPIO.setFunction(MORTOR_RIGHT_FORWARD, GPIO.OUT)
-  GPIO.setFunction(MORTOR_RIGHT_BACK, GPIO.OUT)
-  GPIO.setFunction(MORTOR_LEFT_FORWARD, GPIO.OUT)
-  GPIO.setFunction(MORTOR_LEFT_BACK, GPIO.OUT)
-  GPIO.setFunction(MORTOR_STOP, GPIO.OUT)
-  GPIO.setFunction(SHUTDOWN, GPIO.OUT)
+  GPIO.setFuntion(MORTOR_RIGHT_FORWARD, GPIO.OUT)
+  GPIO.setFuntion(MORTOR_RIGHT_BACK, GPIO.OUT)
+  GPIO.setFuntion(MORTOR_LEFT_FORWARD, GPIO.OUT)
+  GPIO.setFuntion(MORTOR_LEFT_BACK, GPIO.OUT)
+  GPIO.setFuntion(MORTOR_STOP, GPIO.OUT)
+  GPIO.setFuntion(SHUTDOWN, GPIO.OUT)
 
 def allLow():
   GPIO.digitalWrite(MORTOR_LEFT_FORWARD, GPIO.LOW)
   GPIO.digitalWrite(MORTOR_LEFT_BACK, GPIO.LOW)
   GPIO.digitalWrite(MORTOR_RIGHT_FORWARD, GPIO.LOW)
-  GPIO.digitalWrite(MORTOR_RIGHT_BACK, GPIO.LOW)
+  GPIO.digitalWrite(MORTOR_LEFT_BACK, GPIO.LOW)
 
 def destroy():
   allLow()
@@ -63,8 +62,8 @@ def leftTurn():
 @webiopi.macro
 def rightTurn():
   allLow()
-  GPIO.digitalWrite(MORTOR_RIGHT_BACK, GPIO.HIGH)
   GPIO.digitalWrite(MORTOR_LEFT_FORWARD, GPIO.HIGH)
+  GPIO.digitalWrite(MORTOR_RIGHT_BACK, GPIO.HIGH)
 
 @webiopi.macro
 def leftBack():
@@ -74,11 +73,10 @@ def leftBack():
 @webiopi.macro
 def back():
   allLow()
-  GPIO.digitalWrite(MORTOR_RIGHT_BACK, GPIO.HIGH)
   GPIO.digitalWrite(MORTOR_LEFT_BACK, GPIO.HIGH)
+  GPIO.digitalWrite(MORTOR_RIGHT_BACK, GPIO.HIGH)
 
 @webiopi.macro
 def rightBack():
   allLow()
   GPIO.digitalWrite(MORTOR_LEFT_BACK, GPIO.HIGH)
-
