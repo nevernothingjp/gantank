@@ -33,7 +33,7 @@ $ git clone http://github.com/jacksonliam/mjpg-streamer.git mjpg-streamer
 $ cd mjpg-streamer/mjpg-streamer-experimental
 $ make
 $ cd
-$ sodo mv mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
+$ sudo mv mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
 ```
 
 ### ストリーミングアプリの自動起動
@@ -56,9 +56,9 @@ sh /home/ユーザ名/guntank01/stream/stream_stop.sh
 
 # 3.WebIOPiのインストール
 ```
-$ wget https://sourceforge.net/projects/webiopi/files/WebIOPi-0.7.1.tar.gz/download
-$ tar zxvf WebIOOi-0.7.1.tar.gz
-$ cd WebIOOi-0.7.1
+$ wget https://sourceforge.net/projects/webiopi/files/WebIOPi-0.7.1.tar.gz
+$ tar zxvf WebIOPi-0.7.1.tar.gz
+$ cd WebIOPi-0.7.1/
 $ wget https://raw.githubusercontent.com/doublebind/raspi/master/webiopi-pi2bplus.patch
 $ patch -p1 -i webiopi-pi2bplus.patch
 $ sudo ./setup.sh
@@ -72,6 +72,8 @@ $ sudo vi /etc/webiopi/config
 以下の編集をする。
 
 ```
+(略)
+myscript = /home/ユーザ名/guntank01/app/guntank.py
 (略)
 port = 8030
 (略)
