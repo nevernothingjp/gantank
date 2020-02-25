@@ -54,7 +54,7 @@
 #define MOTOR_LEFT_FORWARD  PORTBbits.RB6
 #define MOTOR_LEFT_BACK     PORTCbits.RC6
 #define MOTOR_STOP          PORTCbits.RC7
-#define SHUTDOWN            PORTBbits.RB7
+#define MOTOR_ACTIVE        PORTBbits.RB7
 
 int Motor1, Motor2;
 
@@ -105,38 +105,42 @@ void main(void)
     Motor2 = 0;
 
     while (1) {
-        /* モーターの正転/逆転 スピードの制御 */
-        if (MOTOR_RIGHT_FORWARD == 1) {
-            if (Motor1 < MOTOR_MAX) {
-                Motor1 += MOTOR_STEP;
+        if (MOTOR_ACTIVE == 1) {
+            /* モーターの正転/逆転 スピードの制御 */
+            if (MOTOR_RIGHT_FORWARD == 1) {
+                if (Motor1 < MOTOR_MAX) {
+                    Motor1 += MOTOR_STEP;
+                }
             }
-        }
-        if (MOTOR_RIGHT_BACK == 1) {
-            if (Motor1 > MOTOR_MIN) {
-                Motor1 -= MOTOR_STEP;
+            if (MOTOR_RIGHT_BACK == 1) {
+                if (Motor1 > MOTOR_MIN) {
+                    Motor1 -= MOTOR_STEP;
+                }
             }
-        }
-        if (MOTOR_RIGHT_FORWARD == 0 && MOTOR_RIGHT_BACK == 0) {
+            if (MOTOR_RIGHT_FORWARD == 0 && MOTOR_RIGHT_BACK == 0) {
+                Motor1 = 0;
+            }
+            if (MOTOR_RIGHT_FORWARD == 1 && MOTOR_RIGHT_BACK == 1) {
+                Motor1 = 0;
+            }
+            if (MOTOR_LEFT_FORWARD == 1) {
+                if (Motor2 < MOTOR_MAX) {
+                    Motor2 += MOTOR_STEP;
+                }
+            }
+            if (MOTOR_LEFT_BACK == 1) {
+                if (Motor2 > MOTOR_MIN) {
+                    Motor2 -= MOTOR_STEP;
+                }
+            }
+            if (MOTOR_LEFT_FORWARD == 0 && MOTOR_LEFT_BACK == 0) {
+                Motor2 = 0;
+            }
+            if (MOTOR_LEFT_FORWARD == 1 && MOTOR_LEFT_BACK == 1) {
+                Motor2 = 0;
+            }
+        } else {
             Motor1 = 0;
-        }
-        if (MOTOR_RIGHT_FORWARD == 1 && MOTOR_RIGHT_BACK == 1) {
-            Motor1 = 0;
-        }
-
-        if (MOTOR_LEFT_FORWARD == 1) {
-            if (Motor2 < MOTOR_MAX) {
-                Motor2 += MOTOR_STEP;
-            }
-        }
-        if (MOTOR_LEFT_BACK == 1) {
-            if (Motor2 > MOTOR_MIN) {
-                Motor2 -= MOTOR_STEP;
-            }
-        }
-        if (MOTOR_LEFT_FORWARD == 0 && MOTOR_LEFT_BACK == 0) {
-            Motor2 = 0;
-        }
-        if (MOTOR_LEFT_FORWARD == 1 && MOTOR_LEFT_BACK == 1) {
             Motor2 = 0;
         }
 

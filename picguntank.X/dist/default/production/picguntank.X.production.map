@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\picguntank.X.production.sym \
   --cmf=dist/default/production\picguntank.X.production.cmf -z -Q16F1508 \
-  -oC:\Users\phantom\AppData\Local\Temp\sk6k.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\phantom\AppData\Local\Temp\sdpc.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/picguntank.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=02000h-020EFh -pstack=STACK -ACODE=00h-07FFhx2 \
   -ASTRCODE=00h-0FFFh -ASTRING=00h-0FFhx16 -ACONST=00h-0FFhx16 \
@@ -27,7 +27,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -DCODE=2 -DSTRCODE=2 \
   -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\phantom\AppData\Local\Temp\sk6k.o \
+  C:\Users\phantom\AppData\Local\Temp\sdpc.o \
   dist/default/production\picguntank.X.production.o 
 
 Object code version is 3.11
@@ -37,19 +37,19 @@ Machine type is 16F1508
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\phantom\AppData\Local\Temp\sk6k.o
+C:\Users\phantom\AppData\Local\Temp\sdpc.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\picguntank.X.production.o
                 cinit                               7F9      7F9        7      FF2       0
-                text6                               6D7      6D7       2E      DAE       0
-                text5                               705      705       2E      E0A       0
-                text4                               6AE      6AE        6      D5C       0
-                text3                               6BE      6BE       19      D7C       0
-                text2                               6AB      6AB        3      D56       0
-                text1                               6B4      6B4        A      D68       0
-                maintext                            733      733       C6      E66       0
+                text6                               6CE      6CE       2E      D9C       0
+                text5                               6FC      6FC       2E      DF8       0
+                text4                               6A5      6A5        6      D4A       0
+                text3                               6B5      6B5       19      D6A       0
+                text2                               6A2      6A2        3      D44       0
+                text1                               6AB      6AB        A      D56       0
+                maintext                            72A      72A       CF      E54       0
                 cstackCOMMON                         74       74        3       70       1
                 bssCOMMON                            70       70        4       70       1
 
@@ -60,13 +60,13 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                              2        2        2         0
                 cinit                               7F9      7F9        7         0
                 reset_vec                             0        0        2         0
-                text6                               6D7      6D7       2E         0
-                text5                               705      705       2E         0
-                text4                               6AE      6AE        6         0
-                text3                               6BE      6BE       19         0
-                text2                               6AB      6AB        3         0
-                text1                               6B4      6B4        A         0
-                maintext                            733      733       C6         0
+                text6                               6CE      6CE       2E         0
+                text5                               6FC      6FC       2E         0
+                text4                               6A5      6A5        6         0
+                text3                               6B5      6B5       19         0
+                text2                               6A2      6A2        3         0
+                text1                               6AB      6AB        A         0
+                maintext                            72A      72A       CF         0
 
         CLASS   STRCODE        
 
@@ -228,13 +228,13 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE        2
                 bssCOMMON                      000070  000007  000077        70       1  COMMON      1
-                text2                          0006AB  000003  0006AE       D56       0  CODE        2
-                text4                          0006AE  000006  0006B4       D5C       0  CODE        2
-                text1                          0006B4  00000A  0006BE       D68       0  CODE        2
-                text3                          0006BE  000019  0006D7       D7C       0  CODE        2
-                text6                          0006D7  00002E  000705       DAE       0  CODE        2
-                text5                          000705  00002E  000733       E0A       0  CODE        2
-                maintext                       000733  0000C6  0007F9       E66       0  CODE        2
+                text2                          0006A2  000003  0006A5       D44       0  CODE        2
+                text4                          0006A5  000006  0006AB       D4A       0  CODE        2
+                text1                          0006AB  00000A  0006B5       D56       0  CODE        2
+                text3                          0006B5  000019  0006CE       D6A       0  CODE        2
+                text6                          0006CE  00002E  0006FC       D9C       0  CODE        2
+                text5                          0006FC  00002E  00072A       DF8       0  CODE        2
+                maintext                       00072A  0000CF  0007F9       E54       0  CODE        2
                 cinit                          0007F9  000007  000800       FF2       0  CODE        2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
 
@@ -246,12 +246,12 @@ UNUSED ADDRESS RANGES
         BANK1            000A0-000EF              50           1
         BANK2            00120-0016F              50           1
         BIGRAM           02000-020EF              F0           1
-        CODE             00004-006AA             6A7           2
+        CODE             00004-006A1             69E           2
                          00800-00FFF             800
         COMMON           00077-0007D               7           1
-        CONST            00004-006AA             100           2
+        CONST            00004-006A1             100           2
                          00800-00FFF             100
-        ENTRY            00004-006AA             100           2
+        ENTRY            00004-006A1             100           2
                          00800-00FFF             100
         IDLOC            08000-08003               4           2
         RAM              00020-0006F              50           1
@@ -290,9 +290,9 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
         STACK            02000-020EF              F0           1
-        STRCODE          00004-006AA             6A7           2
+        STRCODE          00004-006A1             69E           2
                          00800-00FFF             800
-        STRING           00004-006AA             100           2
+        STRING           00004-006A1             100           2
                          00800-00FFF             100
 
                                   Symbol Table
@@ -307,15 +307,15 @@ _LATAbits                        (abs)        0010C
 _LATB                            (abs)        0010D
 _LATC                            (abs)        0010E
 _LATCbits                        (abs)        0010E
-_M1Drive                         text6        006D7
-_M2Drive                         text5        00705
+_M1Drive                         text6        006CE
+_M2Drive                         text5        006FC
 _Motor1                          bssCOMMON    00072
 _Motor2                          bssCOMMON    00070
 _OPTION_REGbits                  (abs)        00095
 _OSCCON                          (abs)        00099
 _OSCCONbits                      (abs)        00099
-_OSCILLATOR_Initialize           text4        006AE
-_PIN_MANAGER_Initialize          text3        006BE
+_OSCILLATOR_Initialize           text4        006A5
+_PIN_MANAGER_Initialize          text3        006B5
 _PORTBbits                       (abs)        0000D
 _PORTCbits                       (abs)        0000E
 _PR2                             (abs)        0001B
@@ -331,13 +331,13 @@ _PWM3DCL                         (abs)        00617
 _PWM4CON                         (abs)        0061C
 _PWM4DCH                         (abs)        0061B
 _PWM4DCL                         (abs)        0061A
-_SYSTEM_Initialize               text1        006B4
+_SYSTEM_Initialize               text1        006AB
 _T2CON                           (abs)        0001C
 _TRISA                           (abs)        0008C
 _TRISB                           (abs)        0008D
 _TRISC                           (abs)        0008E
 _WDTCON                          (abs)        00097
-_WDT_Initialize                  text2        006AB
+_WDT_Initialize                  text2        006A2
 _WPUA                            (abs)        0020C
 _WPUB                            (abs)        0020D
 __CFG_BOREN$ON                   (abs)        00000
@@ -542,24 +542,24 @@ ___latbits                       (abs)        00001
 ___sp                            stack        00000
 ___stackhi                       (abs)        020EF
 ___stacklo                       (abs)        02000
-__end_of_M1Drive                 text6        00705
-__end_of_M2Drive                 text5        00733
-__end_of_OSCILLATOR_Initialize   text4        006B4
-__end_of_PIN_MANAGER_Initialize  text3        006D7
-__end_of_SYSTEM_Initialize       text1        006BE
-__end_of_WDT_Initialize          text2        006AE
+__end_of_M1Drive                 text6        006FC
+__end_of_M2Drive                 text5        0072A
+__end_of_OSCILLATOR_Initialize   text4        006AB
+__end_of_PIN_MANAGER_Initialize  text3        006CE
+__end_of_SYSTEM_Initialize       text1        006B5
+__end_of_WDT_Initialize          text2        006A5
 __end_of__initialization         cinit        007FD
 __end_of_main                    maintext     007F9
 __initialization                 cinit        007F9
 __pbssCOMMON                     bssCOMMON    00070
 __pcstackCOMMON                  cstackCOMMON 00074
-__pmaintext                      maintext     00733
-__ptext1                         text1        006B4
-__ptext2                         text2        006AB
-__ptext3                         text3        006BE
-__ptext4                         text4        006AE
-__ptext5                         text5        00705
-__ptext6                         text6        006D7
+__pmaintext                      maintext     0072A
+__ptext1                         text1        006AB
+__ptext2                         text2        006A2
+__ptext3                         text3        006B5
+__ptext4                         text4        006A5
+__ptext5                         text5        006FC
+__ptext6                         text6        006CE
 __size_of_M1Drive                (abs)        00000
 __size_of_M2Drive                (abs)        00000
 __size_of_OSCILLATOR_Initialize  (abs)        00000
@@ -567,7 +567,7 @@ __size_of_PIN_MANAGER_Initialize (abs)        00000
 __size_of_SYSTEM_Initialize      (abs)        00000
 __size_of_WDT_Initialize         (abs)        00000
 __size_of_main                   (abs)        00000
-_main                            maintext     00733
+_main                            maintext     0072A
 btemp                            (abs)        0007E
 end_of_initialization            cinit        007FD
 intlevel0                        functab      00000
@@ -736,7 +736,7 @@ Total ram usage:        0 bytes
 
  *************** function _M2Drive *****************
  Defined at:
-		line 169 in file "main.c"
+		line 173 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -765,7 +765,7 @@ Total ram usage:        1 bytes
 
  *************** function _M1Drive *****************
  Defined at:
-		line 151 in file "main.c"
+		line 155 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -797,7 +797,7 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	06BE	0000	26
+		_PIN_MANAGER_Initialize		CODE           	06B5	0000	26
 
 mcc_generated_files/pin_manager.c estimated size: 26
 
@@ -807,16 +807,16 @@ shared
 shared estimated size: 5
 
 mcc_generated_files/mcc.c
-		_WDT_Initialize		CODE           	06AB	0000	4
-		_OSCILLATOR_Initialize		CODE           	06AE	0000	7
-		_SYSTEM_Initialize		CODE           	06B4	0000	11
+		_WDT_Initialize		CODE           	06A2	0000	4
+		_OSCILLATOR_Initialize		CODE           	06A5	0000	7
+		_SYSTEM_Initialize		CODE           	06AB	0000	11
 
 mcc_generated_files/mcc.c estimated size: 22
 
 main.c
-		_main          		CODE           	0733	0000	199
-		_M1Drive       		CODE           	06D7	0000	47
-		_M2Drive       		CODE           	0705	0000	47
+		_main          		CODE           	072A	0000	208
+		_M1Drive       		CODE           	06CE	0000	47
+		_M2Drive       		CODE           	06FC	0000	47
 
-main.c estimated size: 293
+main.c estimated size: 302
 

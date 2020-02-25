@@ -6133,38 +6133,42 @@ void main(void)
     Motor2 = 0;
 
     while (1) {
+        if (PORTBbits.RB7 == 1) {
 
-        if (PORTBbits.RB4 == 1) {
-            if (Motor1 < 250) {
-                Motor1 += 50;
+            if (PORTBbits.RB4 == 1) {
+                if (Motor1 < 250) {
+                    Motor1 += 50;
+                }
             }
-        }
-        if (PORTBbits.RB5 == 1) {
-            if (Motor1 > -250) {
-                Motor1 -= 50;
+            if (PORTBbits.RB5 == 1) {
+                if (Motor1 > -250) {
+                    Motor1 -= 50;
+                }
             }
-        }
-        if (PORTBbits.RB4 == 0 && PORTBbits.RB5 == 0) {
+            if (PORTBbits.RB4 == 0 && PORTBbits.RB5 == 0) {
+                Motor1 = 0;
+            }
+            if (PORTBbits.RB4 == 1 && PORTBbits.RB5 == 1) {
+                Motor1 = 0;
+            }
+            if (PORTBbits.RB6 == 1) {
+                if (Motor2 < 250) {
+                    Motor2 += 50;
+                }
+            }
+            if (PORTCbits.RC6 == 1) {
+                if (Motor2 > -250) {
+                    Motor2 -= 50;
+                }
+            }
+            if (PORTBbits.RB6 == 0 && PORTCbits.RC6 == 0) {
+                Motor2 = 0;
+            }
+            if (PORTBbits.RB6 == 1 && PORTCbits.RC6 == 1) {
+                Motor2 = 0;
+            }
+        } else {
             Motor1 = 0;
-        }
-        if (PORTBbits.RB4 == 1 && PORTBbits.RB5 == 1) {
-            Motor1 = 0;
-        }
-
-        if (PORTBbits.RB6 == 1) {
-            if (Motor2 < 250) {
-                Motor2 += 50;
-            }
-        }
-        if (PORTCbits.RC6 == 1) {
-            if (Motor2 > -250) {
-                Motor2 -= 50;
-            }
-        }
-        if (PORTBbits.RB6 == 0 && PORTCbits.RC6 == 0) {
-            Motor2 = 0;
-        }
-        if (PORTBbits.RB6 == 1 && PORTCbits.RC6 == 1) {
             Motor2 = 0;
         }
 
